@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页 | 个人简介</title>
+    <style>
+        /* 基础颜色与变量设置 */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+        }
+
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+/* 定义动画效果 */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 页面主体内容区 */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* 两列布局（适用于价值观与理念） */
+        .flex-row {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .flex-half {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* 证书卡片展示 */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            border: 1px solid #e1e8ed;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cert-card h3 {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <div class="logo">我的个人档案</div>
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#philosophy">理念与价值观</a></li>
+                <li><a href="#certificates">获得的证书</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- 个人简介与目前就读 -->
+        <section id="about">
+            <h2>个人简介</h2>
+            <p><strong>你好，我是 [Kainar]！</strong></p>
+            <p>欢迎来到我的个人主页。我是一个对 [我对航空，教育，世界和平爱好者] 充满热情的人。我喜欢探索新鲜事物，并致力于通过不断学习来提升自我。</p>
+            <br>
+            <h3>🎓 目前就读</h3>
+            <p>目前我就读于 <strong>[你的学校名称]</strong>，主修 <strong>[你的专业名称]</strong> 专业。在校期间，我不仅专注于专业基础知识的积累，也积极参与 [社团活动/学术研究/项目实践]，力求将理论应用于实际。</p>
+        </section>
+
+        <!-- 价值观与理念 -->
+        <section id="philosophy">
+            <div class="flex-row">
+                <div class="flex-half">
+                    <h2>核心价值观</h2>
+                    <ul>
+                        <li><strong>持续学习：</strong> 相信知识的力量，保持好奇心，不断更新自己的知识库。</li>
+                        <li><strong>诚实守信：</strong> 在生活和学术/工作中坚持诚信，做到言行一致。</li>
+                        <li><strong>拥抱变化：</strong> 不畏惧未知的挑战，在变化中寻找成长的机遇。</li>
+                        <li><strong>团队协作：</strong> 坚信“一个人走得快，一群人走得远”，重视沟通与合作。</li>
+                    </ul>
+                </div>
+                <div class="flex-half">
+                    <h2>个人理念</h2>
+                    <p>我的核心理念是 <strong>“[写下你的一句座右铭，例如：知行合一，笃行致远]”</strong>。</p>
+                    <p>我认为，无论是对待学业还是未来的事业，都应该保持专注与热爱。我致力于将复杂的问题简单化，用创新的思维去寻找最佳的解决方案。我希望通过自己的努力，不仅能实现个人价值，也能为周围的社会和他人带来积极的影响。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 获得的证书 -->
+        <section id="certificates">
+            <h2>获得的证书与荣誉</h2>
+            <p style="margin-bottom: 20px;">这里记录了我在学习与成长道路上获得的一些认可：</p>
+            
+            <div class="cert-grid">
+                <!-- 证书卡片 1 -->
+                <div class="cert-card">
+                    <h3>[证书名称 1]</h3>
+                    <p>颁发机构：[蔚蓝国际——YMUN耶鲁大学联合国模拟]</p>
+                    <p>获得时间：[2026/05]</p>
+                </div>
+                
+                <!-- 证书卡片 2 -->
+                <div class="cert-card">
+        <img src="blue.png" alt="Blue Ocean 证书" style="width:100%; border-radius:5px; margin-bottom:10px;">
+        <h3>Blue Ocean 商业比赛参赛证书</h3>
+        <p>颁发机构：Blue Ocean Competition</p>
+        <p>获得时间：2026年05月</p>
+        <a href="blue.pdf" target="_blank" style="display:inline-block; margin-top:10px; padding:5px 15px; background:var(--secondary-color); color:white; text-decoration:none; border-radius:4px;">查看完整 PDF</a>
+    </div>
+                <!-- 证书卡片 3 -->
+                <div class="cert-card">
+                    <h3>[荣誉奖项 1]</h3>
+                    <p>颁发机构：[机构名称]</p>
+                    <p>获得时间：[年份/月份]</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 [Kainar]. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
